@@ -145,7 +145,13 @@ class PracticeExam:
     def spiral_matrix(self, n):
         """Return an n x n spiral matrix."""
         
-        matrix = [[0 for _ in range(n)] for _ in range(n)]
+        matrix = []
+        for i in range(left, right+1):    #from left - right
+            ...
+        for j in range(right, left-1, -1):     #from right col, 1st row going down
+            ...
+        for k in range(right, left+1):
+            ...
         top, bottom = 0, n - 1
         left, right = 0, n - 1
         num = 1

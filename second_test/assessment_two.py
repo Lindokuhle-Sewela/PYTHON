@@ -96,11 +96,22 @@ class AssessmentTwo:
 
     def running_sum(self, numbers):
         """Return a list of running sums."""
-        pass
+        result = []
+        current_sum = 0
+        for x in numbers:
+            current_sum += x
+            result.append(current_sum)
+        return result
 
     def longest_unique_substring(self, text):
         """Return the length of the longest substring without repeating characters."""
-        pass
+        substring = []
+        count = 0
+        for i in text:
+            if i not in substring:
+                count += 1
+        return 
+
 
     def rotate_matrix_90(self, matrix):
         """Rotate a square matrix 90 degrees clockwise."""
@@ -118,4 +129,4 @@ class AssessmentTwo:
 
 obj = AssessmentTwo()
 
-print(obj.chunk_list([1, 2, 3, 4, 5], 2))
+print(obj.longest_unique_substring("abbabcc"))
