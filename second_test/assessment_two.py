@@ -110,7 +110,7 @@ class AssessmentTwo:
         for i in text:
             if i not in substring:
                 count += 1
-        return 
+        return count
 
 
     def rotate_matrix_90(self, matrix):
