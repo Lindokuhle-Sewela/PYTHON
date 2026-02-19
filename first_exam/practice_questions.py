@@ -125,7 +125,7 @@ class PracticeExam:
     
             last_opener = stack.pop()
             if last_opener != brackets[i]:
-                print(brackets[i])
+
                 return False
 
     def rotate_left(self, numbers, k):
