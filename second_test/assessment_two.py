@@ -1,3 +1,5 @@
+import string
+
 class AssessmentTwo:
 
     # ===== BASIC =====
@@ -27,8 +29,9 @@ class AssessmentTwo:
     def count_consonants(self, text):
         """Return the number of consonants in the string (letters only)."""
         count = 0
+        
         for i in text:
-            if i.lower() not in "aeiou":
+            if i.lower() in "bcdfghjklmnpqrstvwxyz":
                 count += 1
 
         return count
@@ -50,10 +53,12 @@ class AssessmentTwo:
 
     def word_lengths(self, sentence):
         """Return a dictionary mapping each word to its length."""
+        s = sentence.split()
+        
         word_length = {}
 
-        for word in sentence:
-            word_length[word] += len(word)
+        for word in s:
+            word_length[word] = len(word)
         return word_length
 
     def second_largest(self, numbers):
@@ -70,7 +75,8 @@ class AssessmentTwo:
 
     def chunk_list(self, numbers, size):
         """Split list into chunks of given size."""
-        pass
+        chunk = [list(numbers[i:i+size]) for i in range(0, len(numbers), size)]
+        return chunk
 
     def is_anagram(self, s1, s2):
         """Return True if the two strings are anagrams (ignore case & spaces)."""
@@ -102,7 +108,9 @@ class AssessmentTwo:
 
     def validate_palindrome_number(self, n):
         """Return True if integer n is a palindrome."""
-        pass
+        n = str(n)
+        if n[0:] == n[::-1]:
+            return True
 
     def generate_pascal_row(self, n):
         """Return the nth row of Pascal's Triangle (0-indexed)."""
@@ -110,4 +118,4 @@ class AssessmentTwo:
 
 obj = AssessmentTwo()
 
-print(obj.is_anagram("hello", "world"))
+print(obj.chunk_list([1, 2, 3, 4, 5], 2))

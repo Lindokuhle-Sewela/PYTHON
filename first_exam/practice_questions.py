@@ -116,17 +116,18 @@ class PracticeExam:
         brackets = {")": "(", "}": "{", "]": "["}
         stack = []
         for i in s:
-            if i in "(, { , [":
+            if i in "({[":
                 stack.append(i)
-                print(stack)
-        else: 
-            if not stack:
-                return False
-    
-            last_opener = stack.pop()
-            if last_opener != brackets[i]:
-
-                return False
+                #print(stack)
+            else: 
+                if not stack:
+                    return False
+        
+                last_opener = stack.pop()
+                if last_opener != brackets[i]:
+                    return False
+                
+        return len(stack) == 0
 
     def rotate_left(self, numbers, k):
         """Rotate the list to the left by k positions."""
@@ -143,11 +144,12 @@ class PracticeExam:
 
     def spiral_matrix(self, n):
         """Return an n x n spiral matrix."""
-        for i in range(n):
-            for j in range(i):
-                print(j * i)
-
+        
+        matrix = [[0 for _ in range(n)] for _ in range(n)]
+        top, bottom = 0, n - 1
+        left, right = 0, n - 1
+        num = 1
 
 obj = PracticeExam()
 
-print(obj.valid_parentheses("({[]})"))
+print(obj.spiral_matrix(2))
